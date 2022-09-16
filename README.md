@@ -25,11 +25,11 @@ Catalinaで動作検証済み
 
 MacOSのターミナルを起動し以下コマンドを貼り付けて実行します  
 
+例:) bash <(curl -s https://raw.githubusercontent.com/Aoi-Developer/iDevide-Downgrader-Script/main/main.sh)  
+
 必要なファイルがダウンロードされたら[Y]を押します  
 
 iDeviceをDFUモードにします  
-
-例:) bash <(curl -s https://raw.githubusercontent.com/Aoi-Developer/iDevide-Downgrader-Script/main/main.sh)  
 
 おーしまい！ 
 
