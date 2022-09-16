@@ -33,6 +33,8 @@ iDeviceをDFUモードにします
 
 おーしまい！ 
 
+失敗した場合はiDeviceを再起動しスクリプトを再実行してください。
+
 ![test](Docs/terminal.png)
 
  
