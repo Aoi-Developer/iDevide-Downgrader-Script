@@ -1,6 +1,6 @@
 # iDevide-Downgrader-Script
 
-コマンドの知識無しでもっとも簡単にiPhone5s及び iPhone5 をダウングレードするスクリプトです。
+コマンドの知識無しでもっとも簡単にiPhone5s及び iPhone5 をダウングレードするスクリプトです。  
 必要なコマンドやファイルはすべてスクリプトが自動で用意します
 
 # 対応デバイス
@@ -29,8 +29,10 @@ MacOSのターミナルを起動し以下コマンドを貼り付けて実行し
 
 iDeviceをDFUモードにします  
 
-例:) bash <(curl -s https://raw.githubusercontent.com/Aoi-Developer/iDevide-Downgrader-Script/main/main.sh)
+例:) bash <(curl -s https://raw.githubusercontent.com/Aoi-Developer/iDevide-Downgrader-Script/main/main.sh)  
+
+おーしまい！ 
 
 ![test](Docs/terminal.png)
 
-おーしまい！  
+ 
