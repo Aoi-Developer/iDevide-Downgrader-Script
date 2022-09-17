@@ -127,9 +127,11 @@ if [ "iPhone5,2" = $model ]; then
       exit
       ;;
     esac
-  .././ipwnder32_x86_64 -p && .././futurerestore -t $ecid/`echo $model`_`echo $ecid`.shsh2 --latest-baseband --use-pwndfu iPhone5,2_8.4.1_12H321_Restore.ipsw
+  .././ipwnder32_x86_64 -p
+  .././ipwnder32_x86_64 -p
+  .././futurerestore -t $ecid/`echo $model`_`echo $ecid`.shsh2 --latest-baseband --use-pwndfu iPhone5,2_8.4.1_12H321_Restore.ipsw
   sleep 5
-  .././ipwnder32_x86_64 -p && .././futurerestore -t $ecid/`echo $model`_`echo $ecid`.shsh2 --latest-baseband --use-pwndfu iPhone5,2_8.4.1_12H321_Restore.ipsw
+  .././futurerestore -t $ecid/`echo $model`_`echo $ecid`.shsh2 --latest-baseband --use-pwndfu iPhone5,2_8.4.1_12H321_Restore.ipsw
   echo .
   echo "スクリプトの実行が終了しました。ダウングレードに失敗した場合はDFUモードにした後、以下コマンドを実行すると再実行できます"
   echo "cd `pwd` && .././ipwnder_macosx && .././futurerestore -t $ecid/`echo $model`_`echo $ecid`.shsh2 --latest-baseband --use-pwndfu iPhone5,2_8.4.1_12H321_Restore.ipsw"
