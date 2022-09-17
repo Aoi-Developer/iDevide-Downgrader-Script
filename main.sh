@@ -24,14 +24,6 @@ else
   mkdir otadown
   cd otadown
 fi
-#futurerestoreをダウンロードします
-if [ -f futurerestore ]; then
-  echo "[OK]futurerestore"
-else
-  curl -OL https://github.com/tihmstar/futurerestore/releases/download/180/futurerestore_macOS_v180.zip
-  unzip futurerestore_macOS_v180.zip
-  rm futurerestore_macOS_v180.zip
-fi
 #futurerestore2をダウンロードします
 if [ -f futurerestore_2 ]; then
   echo "[OK]futurerestore_2"
@@ -39,6 +31,14 @@ else
   curl -OL https://dl.dropboxusercontent.com/s/pd0mwmh7q1d51iw/futurerestore
   mv futurerestore futurerestore_2
   chmod -R 766 futurerestore_2
+fi
+#futurerestoreをダウンロードします
+if [ -f futurerestore ]; then
+  echo "[OK]futurerestore"
+else
+  curl -OL https://github.com/tihmstar/futurerestore/releases/download/180/futurerestore_macOS_v180.zip
+  unzip futurerestore_macOS_v180.zip
+  rm futurerestore_macOS_v180.zip
 fi
 #tsscheckerをダウンロードします
 if [ -f tsschecker ]; then
