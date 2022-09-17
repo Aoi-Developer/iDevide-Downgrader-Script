@@ -50,7 +50,7 @@ else
   cd ../
 fi
 #ipwnder32を準備します
-if [ -f iPwnder32 ]; then
+if [ -f ipwnder32_x86_64 ]; then
   echo "[OK]iPwnder32"
 else
   curl -OL https://github.com/dora2-iOS/iPwnder32/archive/refs/tags/3.1.zip
