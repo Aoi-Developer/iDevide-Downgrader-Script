@@ -123,8 +123,7 @@ if [ "iPhone5,2" = $model ]; then
       exit
       ;;
     esac
-  .././ipwnder_macosx
-  .././ipwnder_macosx
+  .././pwnedDFU -p -f
   .././futurerestore -t $ecid/`echo $model`_`echo $ecid`.shsh2 --latest-baseband --use-pwndfu iPhone5,2_8.4.1_12H321_Restore.ipsw
   sleep 5
   .././futurerestore -t $ecid/`echo $model`_`echo $ecid`.shsh2 --latest-baseband --use-pwndfu iPhone5,2_8.4.1_12H321_Restore.ipsw
