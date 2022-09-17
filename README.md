@@ -10,7 +10,7 @@ iPhone5s [iPhone6,1]
 
 # 対応OS
 
-MacOSのみ。BigSur以前推奨。  
+Intel_MacOSのみ。BigSur以前推奨。  
 Catalinaで動作検証済み
 
 # 実行する前に
