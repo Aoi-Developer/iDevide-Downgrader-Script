@@ -5,7 +5,7 @@
 
 # 対応デバイス
 
-iPhone5 [iPhone5,2]  
+iPhone5 [iPhone5,2](成功率低いです)  
 iPhone5s [iPhone6,1]
 
 # 対応OS
