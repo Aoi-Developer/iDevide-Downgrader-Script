@@ -29,7 +29,7 @@ if [ -f futurerestore_2 ]; then
   echo "[OK]futurerestore_2"
 else
   curl -OL https://nightly.link/futurerestore/futurerestore/workflows/ci/main/futurerestore-macOS-RELEASE.zip
-  open futurerestore-macOS-RELEASE.zip
+  open -a futurerestore-macOS-RELEASE.zip
   mv futurerestore futurerestore_2
   chmod -R 766 futurerestore_2
 fi
