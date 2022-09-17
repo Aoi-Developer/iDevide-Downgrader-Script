@@ -37,7 +37,7 @@ iDeviceをDFUモードにします
 
 ![test](Docs/terminal.png)
 
-# repo
+# Credits
 
 @dora2-iOS  
 https://github.com/dora2-iOS/iPwnder32  
