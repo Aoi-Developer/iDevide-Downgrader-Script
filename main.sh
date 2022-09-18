@@ -138,12 +138,12 @@ if [ "iPhone5,2" = $model ]; then
     esac
   .././ipwnder32_x86_64 -p
   .././ipwnder32_x86_64 -p
-  .././futurerestore_2 -t $ecid/`echo $model`_`echo $ecid`.shsh2 --latest-baseband --use-pwndfu iPhone5,2_8.4.1_12H321_Restore.ipsw
+  .././futurerestore_2 -t $ecid/`echo $model`_`echo $ecid`.shsh2 -b Firmware/Mav5-8.02.00.Release.bbfw -p BuildManifest_iPhone5,2_841_OTA.plist -m BuildManifest_iPhone5,2_841_OTA.plist --use-pwndfu iPhone5,2_8.4.1_12H321_Restore.ipsw
   sleep 5
-  .././futurerestore_2 -t $ecid/`echo $model`_`echo $ecid`.shsh2 --latest-baseband --use-pwndfu iPhone5,2_8.4.1_12H321_Restore.ipsw
+  .././futurerestore_2 -t $ecid/`echo $model`_`echo $ecid`.shsh2 -b Firmware/Mav5-8.02.00.Release.bbfw -p BuildManifest_iPhone5,2_841_OTA.plist -m BuildManifest_iPhone5,2_841_OTA.plist --use-pwndfu iPhone5,2_8.4.1_12H321_Restore.ipsw
   echo .
   echo "スクリプトの実行が終了しました。ダウングレードに失敗した場合はDFUモードにした後、以下コマンドを実行すると再実行できます"
-  echo "cd `pwd` && .././ipwnder_macosx && .././futurerestore_2 -t $ecid/`echo $model`_`echo $ecid`.shsh2 --latest-baseband --use-pwndfu iPhone5,2_8.4.1_12H321_Restore.ipsw"
+  echo "cd `pwd` && .././ipwnder_macosx && .././futurerestore_2 -t $ecid/`echo $model`_`echo $ecid`.shsh2 -b Firmware/Mav5-8.02.00.Release.bbfw -p BuildManifest_iPhone5,2_841_OTA.plist -m BuildManifest_iPhone5,2_841_OTA.plist --use-pwndfu iPhone5,2_8.4.1_12H321_Restore.ipsw"
   exit
 fi
 
