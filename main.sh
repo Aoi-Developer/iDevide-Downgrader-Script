@@ -57,6 +57,7 @@ else
   make
   mv ipwnder_macosx ../
   cd ../
+  rm -rf ipwnder_lite
 fi
 #ipwnder32を準備します
 if [ -f ipwnder32_x86_64 ]; then
@@ -69,6 +70,7 @@ else
   ./BUILD_x86_64
   mv ipwnder32_x86_64 ../ipwnder32_x86_64
   cd ../
+  rm -rf iPwnder32-3.1
 fi
 #デバイス情報を読み取り作業用ディレクトリを作成します
 ideviceinfo >/dev/null 2>&1
