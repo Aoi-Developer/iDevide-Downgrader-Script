@@ -32,6 +32,14 @@ else
   mv futurerestore futurerestore_2
   chmod -R 766 futurerestore_2
 fi
+#futurerestore_libipatcherをダウンロードします
+if [ -f futurerestore_3 ]; then
+  echo "[OK]futurerestore_libipatcher"
+else
+  curl -OL https://dl.dropboxusercontent.com/s/c98y2emha4o3e9u/futurerestore_macos
+  mv futurerestore_macos futurerestore_3
+  chmod -R 766 futurerestore_3
+fi
 #futurerestoreをダウンロードします
 if [ -f futurerestore ]; then
   echo "[OK]futurerestore"
@@ -172,12 +180,12 @@ if [ "iPhone4,1" = $model ]; then
         exit
         ;;
       esac
-    .././futurerestore -t $ecid/`echo $model`_`echo $ecid`_613.shsh2 -b Firmware/Trek-3.4.03.Release.bbfw -p BuildManifest_iPhone4,1_613_OTA.plist -m BuildManifest_iPhone4,1_613_OTA.plist --use-pwndfu iPhone4,1_6.1.3_10B329_Restore.ipsw
+    .././futurerestore_3 -t $ecid/`echo $model`_`echo $ecid`_613.shsh2 -b Firmware/Trek-3.4.03.Release.bbfw -p BuildManifest_iPhone4,1_613_OTA.plist -m BuildManifest_iPhone4,1_613_OTA.plist --use-pwndfu iPhone4,1_6.1.3_10B329_Restore.ipsw
     sleep 5
-    .././futurerestore -t $ecid/`echo $model`_`echo $ecid`_613.shsh2 -b Firmware/Trek-3.4.03.Release.bbfw -p BuildManifest_iPhone4,1_613_OTA.plist -m BuildManifest_iPhone4,1_613_OTA.plist --use-pwndfu iPhone4,1_6.1.3_10B329_Restore.ipsw
+    .././futurerestore_3 -t $ecid/`echo $model`_`echo $ecid`_613.shsh2 -b Firmware/Trek-3.4.03.Release.bbfw -p BuildManifest_iPhone4,1_613_OTA.plist -m BuildManifest_iPhone4,1_613_OTA.plist --use-pwndfu iPhone4,1_6.1.3_10B329_Restore.ipsw
     echo .
     echo "スクリプトの実行が終了しました。ダウングレードに失敗した場合はPwndfuモードにした後、以下コマンドを実行すると再実行できます"
-    echo "cd `pwd` && .././futurerestore -t $ecid/`echo $model`_`echo $ecid`_613.shsh2 -b Firmware/Trek-3.4.03.Release.bbfw -p BuildManifest_iPhone4,1_841_OTA.plist -m BuildManifest_iPhone4,1_841_OTA.plist --use-pwndfu iPhone4,1_6.1.3_10B329_Restore.ipsw"
+    echo "cd `pwd` && .././futurerestore_3 -t $ecid/`echo $model`_`echo $ecid`_613.shsh2 -b Firmware/Trek-3.4.03.Release.bbfw -p BuildManifest_iPhone4,1_841_OTA.plist -m BuildManifest_iPhone4,1_841_OTA.plist --use-pwndfu iPhone4,1_6.1.3_10B329_Restore.ipsw"
     exit
   elif [ 2 = $ANS ] ; then
     echo "ios8.4.1に復元されます"
@@ -203,12 +211,12 @@ if [ "iPhone4,1" = $model ]; then
         exit
         ;;
       esac
-    .././futurerestore -t $ecid/`echo $model`_`echo $ecid`_841.shsh2 -b Firmware/Trek-5.5.00.Release.bbfw -p BuildManifest_iPhone4,1_841_OTA.plist -m BuildManifest_iPhone4,1_841_OTA.plist --use-pwndfu iPhone4,1_8.4.1_12H321_Restore.ipsw 
+    .././futurerestore_3 -t $ecid/`echo $model`_`echo $ecid`_841.shsh2 -b Firmware/Trek-5.5.00.Release.bbfw -p BuildManifest_iPhone4,1_841_OTA.plist -m BuildManifest_iPhone4,1_841_OTA.plist --use-pwndfu iPhone4,1_8.4.1_12H321_Restore.ipsw 
     sleep 5
-    .././futurerestore -t $ecid/`echo $model`_`echo $ecid`_841.shsh2 -b Firmware/Trek-5.5.00.Release.bbfw -p BuildManifest_iPhone4,1_841_OTA.plist -m BuildManifest_iPhone4,1_841_OTA.plist --use-pwndfu iPhone4,1_8.4.1_12H321_Restore.ipsw 
+    .././futurerestore_3 -t $ecid/`echo $model`_`echo $ecid`_841.shsh2 -b Firmware/Trek-5.5.00.Release.bbfw -p BuildManifest_iPhone4,1_841_OTA.plist -m BuildManifest_iPhone4,1_841_OTA.plist --use-pwndfu iPhone4,1_8.4.1_12H321_Restore.ipsw 
     echo .
     echo "スクリプトの実行が終了しました。ダウングレードに失敗した場合はPwndfuモードにした後、以下コマンドを実行すると再実行できます"
-    echo "cd `pwd` && .././futurerestore -t $ecid/`echo $model`_`echo $ecid`_841.shsh2 -b Firmware/Trek-5.5.00.Release.bbfw -p BuildManifest_iPhone4,1_841_OTA.plist -m BuildManifest_iPhone4,1_841_OTA.plist --use-pwndfu iPhone4,1_8.4.1_12H321_Restore.ipsw"
+    echo "cd `pwd` && .././futurerestore_3 -t $ecid/`echo $model`_`echo $ecid`_841.shsh2 -b Firmware/Trek-5.5.00.Release.bbfw -p BuildManifest_iPhone4,1_841_OTA.plist -m BuildManifest_iPhone4,1_841_OTA.plist --use-pwndfu iPhone4,1_8.4.1_12H321_Restore.ipsw"
     exit
   else
     echo "無効な数値が入力されました。初めからやり直してください"
