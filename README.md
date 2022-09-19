@@ -5,6 +5,7 @@
 
 # 対応デバイス
 
+iPhone4s [iPhone4,1] (現状Jailbreakが必要)  
 iPhone5 [iPhone5,2]  
 iPhone5s [iPhone6,1]
 
@@ -29,7 +30,7 @@ MacOSのターミナルを起動し以下コマンドを貼り付けて実行し
 
 必要なファイルがダウンロードされたら[Y]を押します  
 
-iDeviceをDFUモードにします  
+iDeviceをDFUモードにします(4sに限りkDFUAppでpwndfuにする必要あり)  
 
 おーしまい！ 
 
