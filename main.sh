@@ -149,7 +149,7 @@ if [ "iPhone4,1" = $model ]; then
   fi
   cd ../
   echo 
-  echo "※現状iPhone4sではJailbreakであり、kDFUAppがインストールされている必要があります"
+  echo "※現状iPhone4sではJailbreak済であり、kDFUAppがインストールされている必要があります"
   echo "接続されているデバイスには複数のダウングレード可能なバージョンが存在します。"
   echo "ダウングレードしたいバーションを番号で選択し、Enterをおしてください"
   echo "1 :)ios6.1.3"
@@ -322,10 +322,10 @@ if [ "iPhone6,1" = $model ]; then
     esac
   .././ipwnder_macosx
   if [ $? -ne 0 ] ; then
-    echo "Powndfuにできませんでした。スクリプトを再試行してください"
+    echo "Pwndfuにできませんでした。スクリプトを再試行してください"
     exit 1
   else
-    echo "[OK]Powndfu"
+    echo "[OK]Pwndfu"
   fi
   .././futurerestore -t $ecid/`echo $model`_`echo $ecid`.shsh2 -b Firmware/Mav7Mav8-7.60.00.Release.bbfw -s Firmware/all_flash/sep-firmware.n51.RELEASE.im4p -p BuildManifest_iPhone6,1_1033_OTA.plist -m BuildManifest_iPhone6,1_1033_OTA.plist --use-pwndfu iPhone_4.0_64bit_10.3.3_14G60_Restore.ipsw
   sleep 5
