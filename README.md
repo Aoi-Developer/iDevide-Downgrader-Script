@@ -25,9 +25,9 @@ Catalinaで動作検証済み
 通常通り起動するiPhoneをPCに接続し信頼します  
 
 MacOSのターミナルを起動し以下コマンドを貼り付けて実行します  
-
-例:) bash <(curl -s https://raw.githubusercontent.com/Aoi-Developer/iDevide-Downgrader-Script/main/main.sh)  
-
+```sh
+bash <(curl -s https://raw.githubusercontent.com/Aoi-Developer/iDevide-Downgrader-Script/main/main.sh)  
+```
 必要なファイルがダウンロードされたら[Y]を押します  
 
 iDeviceをDFUモードにします(4sに限りkDFUAppでpwndfuにする必要あり)  
