@@ -38,7 +38,7 @@ iDeviceをDFUモードにします(4sに限りkDFUAppでpwndfuにする必要あ
 
 ![test](Docs/terminal.png)
 
-# Credits
+# repo
 
 @dora2-iOS  
 https://github.com/dora2-iOS/iPwnder32  
@@ -47,6 +47,3 @@ https://github.com/dora2-iOS/ipwnder_lite
 @tihmstar  
 https://github.com/tihmstar/futurerestore  
 https://github.com/tihmstar/tsschecker
-
-@futurerestore
-https://github.com/futurerestore/futurerestore
