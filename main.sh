@@ -80,15 +80,26 @@ else
   cd ../
   rm -rf iPwnder32-3.1
 fi
-#デバイス情報を読み取り作業用ディレクトリを作成します
-ideviceinfo >/dev/null 2>&1
-if [ $? -ne 0 ] ; then
-  echo "iDeviceが接続されていません。"
-  echo "MacにiPhoneを接続し信頼した後再試行してください"
-  exit 1
+
+
+#引数が2つの場合
+if [ $# = 2 ]; then
+  model=`echo $1`
+  ecid=`echo $2`
+else
+  #デバイス情報を読み取ります。
+  ideviceinfo >/dev/null 2>&1
+  if [ $? -ne 0 ] ; then
+    echo "iDeviceが接続されていません。"
+    echo "MacにiPhoneを接続し信頼したか引数にモデル名とECIDを指定して再試行してください"
+    exit 1
+  else
+    ecid=$(ideviceinfo | grep UniqueChipID | sed 's/UniqueChipID: //g')
+    model=$(ideviceinfo | grep ProductType | sed 's/ProductType: //g')
+  fi
 fi
-ecid=$(ideviceinfo | grep UniqueChipID | sed 's/UniqueChipID: //g')
-model=$(ideviceinfo | grep ProductType | sed 's/ProductType: //g')
+
+#作業用ディレクトリを作成します
 udid=$(idevice_id --list)
 echo -n "ECID:"
 echo $ecid
@@ -106,6 +117,7 @@ else
   mkdir $ecid
   cd $ecid
 fi
+
 
 #iPhone4sの場合
 if [ "iPhone4,1" = $model ]; then
