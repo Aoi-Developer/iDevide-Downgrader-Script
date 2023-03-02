@@ -11,7 +11,7 @@ iPhone5s [iPhone6,1]
 
 # 対応OS
 
-Intel_MacOSのみ。BigSur推奨。  
+Intel_MacOSのみ。BigSur推奨。(原因は分かりませんがMonterey以上だと正しく動作しません)  
 Catalinaで動作検証済み
 
 # 実行する前に
