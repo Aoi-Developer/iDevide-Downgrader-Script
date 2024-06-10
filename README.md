@@ -8,6 +8,7 @@
 iPhone4s [iPhone4,1] (現状Jailbreakが必要)  
 iPhone5 [iPhone5,2]  
 iPhone5s [iPhone6,1]
+iPad 第四世代 [iPad3,6]
 
 # 対応OS
 
