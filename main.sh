@@ -287,6 +287,55 @@ if [ "iPhone5,2" = $model ]; then
   exit
 fi
 
+#iPad4世代の場合
+if [ "iPad3,6" = $model ]; then
+  echo "接続されているiPadは[ios8.4.1]にダウングレードされます"
+  cd ../
+  if [ -f BuildManifest_iPad3,6_841_OTA.plist ]; then
+    echo "[OK]BuildManifest"
+  else
+    curl -OL https://raw.githubusercontent.com/Aoi-Developer/iDevide-Downgrader-Script/main/Manfiest/BuildManifest_iPad3,6_841_OTA.plist
+  fi
+  cd $ecid
+  ls -1 `echo $model`_`echo $ecid`.shsh2 >/dev/null 2>&1
+  if [ $? -ne 0 ] ; then
+    ../.././tsschecker -d $model -e $ecid -m ../BuildManifest_iPad3,6_841_OTA.plist -s  
+    mv `ls -1 | grep shsh2` `echo $model`_`echo $ecid`.shsh2
+  else
+    echo "[OK]SHSH"
+  fi
+  cd ../
+  if [ -f iPad3,6_8.4.1_12H321_Restore.ipsw ]; then
+    echo "[OK]IPSW"
+  else
+    curl -OL https://secure-appldnld.apple.com/ios8.4.1/031-31187-20150812-751A8A7E-3C8F-11E5-B300-B71A3A53DB92/iPad3,6_8.4.1_12H321_Restore.ipsw
+  fi
+  if [ -f Firmware/Mav5-8.02.00.Release.bbfw ]; then
+    echo "[OK]bbfw"
+  else
+    unzip iPad3,6_8.4.1_12H321_Restore.ipsw Firmware/Mav5-8.02.00.Release.bbfw
+  fi
+  echo -n "ダウングレードの準備ができました。[Y]を押すと続行します。[Y/n]:"
+  read ANS
+  case $ANS in
+    "" | [Yy]* )
+      echo "電源とホームボタンを長押ししてiPadをDFUモードにしてください。"
+      ;;
+    * )
+      echo "ダウングレードをキャンセルしました"
+      exit
+      ;;
+    esac
+  .././ipwnder32_x86_64 -p
+  .././ipwnder32_x86_64 -p
+  .././futurerestore_2 -t $ecid/`echo $model`_`echo $ecid`.shsh2 -b Firmware/Mav5-8.02.00.Release.bbfw -p BuildManifest_iPad3,6_841_OTA.plist -m BuildManifest_iPad3,6_841_OTA.plist --use-pwndfu iPad3,6_8.4.1_12H321_Restore.ipsw
+  sleep 5
+  .././futurerestore_2 -t $ecid/`echo $model`_`echo $ecid`.shsh2 -b Firmware/Mav5-8.02.00.Release.bbfw -p BuildManifest_iPad3,6_841_OTA.plist -m BuildManifest_iPad3,6_841_OTA.plist --use-pwndfu iPad3,6_8.4.1_12H321_Restore.ipsw
+  echo .
+  echo "スクリプトの実行が終了しました。ダウングレードに失敗した場合はDFUモードにした後、以下コマンドを実行すると再実行できます"
+  echo "cd `pwd` && .././ipwnder_macosx && .././futurerestore_2 -t $ecid/`echo $model`_`echo $ecid`.shsh2 -b Firmware/Mav5-8.02.00.Release.bbfw -p BuildManifest_iPad3,6_841_OTA.plist -m BuildManifest_iPad3,6_841_OTA.plist --use-pwndfu iPad3,6_8.4.1_12H321_Restore.ipsw"
+  exit
+fi
 
 #iPhone5sの場合
 if [ "iPhone6,1" = $model ]; then
